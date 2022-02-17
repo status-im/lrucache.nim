@@ -6,7 +6,8 @@
     "draft": false,
     "tokenRef": "GITHUB_TOKEN",
     "assets": "",
-    "timeout": 0
+    "timeout": 0,
+    "skipChecks": true
   },
   "hooks": {
     "after:bump": [

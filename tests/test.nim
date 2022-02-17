@@ -8,27 +8,32 @@ suite "LruCache":
 
     # put
     for i in 1..10: cache[i] = i
-    check: cache.len == 10  
+    check: cache.len == 10
 
     # get
     for i in 1..10: check: cache[i] == i
-    
+
     # del
-    for i in 1..10: cache.del(i)
-    check: cache.len == 0
-      
+    for i in 1..10:
+      let deleted = cache.del(i)
+      check: deleted == i.some
+
+    check:
+      cache.len == 0
+      cache.del(0) == int.none
+
   test "remove items if capacity exceeded":
     let cache = newLruCache[int, int](5)
 
     # put
     for i in 1..10: cache[i] = i
-    check: cache.len == 5  
+    check: cache.len == 5
 
     # check 
     for i in 1..5: 
       check: i notin cache
     for i in 6..10: 
-      check: i in cache 
+      check: i in cache
 
   test "remvoe least recently used item if capacity exceeded":
     let cache = newLruCache[int, int](2)
@@ -117,7 +122,7 @@ suite "LruCache":
     cache[2] = 2 
     check: 1 notin cache
     check: 2 in cache
-  
+
     cache.capacity = 2
     cache[1] = 1
 
@@ -167,6 +172,25 @@ suite "LruCache":
     check: cache.getMruValue == 10
     cache[3] = 30
     check: cache.getMruValue == 30
+
+  test "removeLru":
+    let cache = newLruCache[int, int](2)
+
+    expect EmptyLruCacheError:
+      discard cache.removeLru()
+
+    cache[1] = 10
+    check:
+      cache.len == 1
+      cache.removeLru == 10
+      cache.len == 0
+
+    cache[2] = 20
+    cache[3] = 30
+    check:
+      cache.len == 2
+      cache.removeLru == 20
+      cache.len == 1
 
   test "README usage":
     # create a new LRU cache with initial capacity of 1 items
