@@ -12,7 +12,7 @@ $ nimble install lrucache
 
 ## API
 
-See [here](https://jackhftang.github.io/lrucache.nim/)
+See [here](./docs/index.html)
 
 ## Usage
 
