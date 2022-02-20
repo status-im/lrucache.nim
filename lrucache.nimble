@@ -34,12 +34,15 @@ task version, "update version":
 task docgen, "generate docs":
   exec "nim doc --out:docs/index.html src/lrucache.nim"
 
-# note: will launch web ui if GITHUB_TOKEN not in environment
+# note: requires GITHUB_TOKEN in environment
+task release, "release cli interactive":
+  exec "npx release-it"
+
 task release_patch, "release with patch increment":
-  exec "npx release-it; release-it --ci -i patch"
+  exec "npx release-it --ci -i patch"
 
 task release_minor, "releaes with minor increment":
-  exec "npx release-it; release-it --ci -i minor"
+  exec "npx release-it --ci -i minor"
 
 task release_major, "release with major increment":
-  exec "npx release-it; release-it --ci -i major"
+  exec "npx release-it --ci -i major"
