@@ -1,7 +1,7 @@
 {
   "github": {
     "release": true,
-    "releaseName": "Release ${version}",
+    "releaseName": "Release v${version}",
     "preRelease": false,
     "draft": false,
     "tokenRef": "GITHUB_TOKEN",
@@ -11,7 +11,7 @@
   },
   "hooks": {
     "after:bump": [
-      "nimble version ${version}",
+      "nimble version v${version}",
       "nimble docgen"
     ]
   }
