@@ -12,7 +12,7 @@ $ nimble install lrucache
 
 ## API
 
-See [here](./docs/index.html)
+See [api docs](https://status-im.github.io/lrucache.nim)
 
 ## Usage
 
@@ -39,4 +39,18 @@ cache[3] = "c"
 assert: 1 notin cache
 assert: 2 in cache
 assert: 3 in cache
+```
+
+## lrucache devs - create a release
+Put a personal access token named `GITHUB_TOKEN` in your environment [with `repo` access](https://github.com/settings/tokens/new?scopes=repo&description=release-it). You can then release interactively using `nimble release`. This will provide options for creating a release commit, a tag, and a github release, and handle the push for you. You can also achieve this non-interactively with `nimble release_patch`, `nimble release_minor`, or `nimble release_major`.
+NOTE: if a `GITHUB_TOKEN` is not in your environment, but you have a git user configured for the current working directory with enough permissions for the repository, then likely the commit and tag push will work, but the release creation will fail.
+```bash
+# Launch interactive release process
+nimble release
+# Launch non-interactive release process for patch release
+nimble release_patch
+# Launch non-interactive release process for minor release
+nimble release_minor
+# Launch non-interactive release process for major release
+nimble release_major
 ```
