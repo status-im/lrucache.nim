@@ -204,3 +204,9 @@ proc removeLru*[K,T](cache: LruCache[K,T]): T
   # under no circumstances should `val` be Option.none, given that the cache is
   # not empty, we should always have an LRU key
   return val.get
+
+iterator keys*[K,T](cache: LruCache[K,T]): lent K =
+  var it = cache.list.head
+  while not isNil(it):
+    yield it.value.key
+    it = it.next
