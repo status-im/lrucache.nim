@@ -155,14 +155,14 @@ proc isFull*[K,T](cache: LruCache[K,T]): bool {.inline.} =
   ## Raise `EmptyLruCacheError` if `cache` is empty.
   cache.len == cache.capacity
 
-proc getMruKey*[K,T](cache: LruCache[K,T]): K {.raises: [EmptyLruCacheError].} =
+proc getMruKey*[K,T](cache: LruCache[K,T]): K {.raises: [Defect, EmptyLruCacheError].} =
   ## Return most recently used key.
   ## Raise `EmptyLruCacheError` if `cache` is empty.
   if cache.isEmpty:
     raise newException(EmptyLruCacheError, "Cannot get most recently used key from empty cache")
   cache.list.head.value.key
 
-proc getMruValue*[K,T](cache: LruCache[K,T]): T {.raises: [EmptyLruCacheError].} =
+proc getMruValue*[K,T](cache: LruCache[K,T]): T {.raises: [Defect, EmptyLruCacheError].} =
   ## Return most recently used value.
   ## Raise `EmptyLruCacheError` if `cache` is empty.
   if cache.isEmpty:
@@ -180,7 +180,7 @@ proc getLruKey*[K,T](cache: LruCache[K,T]): K
   cache.list.tail.value.key
 
 proc getLruValue*[K,T](cache: LruCache[K,T]): T
-  {.raises: [EmptyLruCacheError].} =
+  {.raises: [Defect, EmptyLruCacheError].} =
 
   ## Return least recently used value.
   ## Raise `EmptyLruCacheError` if `cache` is empty.
