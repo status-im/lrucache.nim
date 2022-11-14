@@ -229,6 +229,17 @@ window.addEventListener('DOMContentLoaded', main);
 
   </ul>
 </li>
+<li>
+  <a class="reference reference-toplevel" href="#15" id="65">Iterators</a>
+  <ul class="simple simple-toc-section">
+      <ul class="simple nested-toc-section">keys
+      <li><a class="reference" href="#keys.i%2CLruCache%5BK%2CT%5D"
+    title="keys[K, T](cache: LruCache[K, T]): lent K">keys[K, T](cache: LruCache[K, T]): lent K</a></li>
+
+  </ul>
+
+  </ul>
+</li>
 
 </ul>
 
@@ -349,8 +360,8 @@ Return least recently used key. Raise <tt class="docutils literal"><span class="
 </dd>
 </div>
 <div id="getLruValue,LruCache[K,T]">
-<dt><pre><span class="Keyword">proc</span> <a href="#getLruValue%2CLruCache%5BK%2CT%5D"><span class="Identifier">getLruValue</span></a><span class="Other">[</span><span class="Identifier">K</span><span class="Other">,</span> <span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">cache</span><span class="Other">:</span> <a href="lrucache.html#LruCache"><span class="Identifier">LruCache</span></a><span class="Other">[</span><span class="Identifier">K</span><span class="Other">,</span> <span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><a href="lrucache.html#EmptyLruCacheError"><span class="Identifier">EmptyLruCacheError</span></a><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Defect</span><span class="Other">]</span></span>.}</pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#getLruValue%2CLruCache%5BK%2CT%5D"><span class="Identifier">getLruValue</span></a><span class="Other">[</span><span class="Identifier">K</span><span class="Other">,</span> <span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">cache</span><span class="Other">:</span> <a href="lrucache.html#LruCache"><span class="Identifier">LruCache</span></a><span class="Other">[</span><span class="Identifier">K</span><span class="Other">,</span> <span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span> {.
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Defect</span><span class="Other">,</span> <a href="lrucache.html#EmptyLruCacheError"><span class="Identifier">EmptyLruCacheError</span></a><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Defect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Return least recently used value. Raise <tt class="docutils literal"><span class="pre"><span class="Identifier">EmptyLruCacheError</span></span></tt> if <tt class="docutils literal"><span class="pre"><span class="Identifier">cache</span></span></tt> is empty.
@@ -358,8 +369,8 @@ Return least recently used value. Raise <tt class="docutils literal"><span class
 </dd>
 </div>
 <div id="getMruKey,LruCache[K,T]">
-<dt><pre><span class="Keyword">proc</span> <a href="#getMruKey%2CLruCache%5BK%2CT%5D"><span class="Identifier">getMruKey</span></a><span class="Other">[</span><span class="Identifier">K</span><span class="Other">,</span> <span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">cache</span><span class="Other">:</span> <a href="lrucache.html#LruCache"><span class="Identifier">LruCache</span></a><span class="Other">[</span><span class="Identifier">K</span><span class="Other">,</span> <span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">K</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><a href="lrucache.html#EmptyLruCacheError"><span class="Identifier">EmptyLruCacheError</span></a><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Defect</span><span class="Other">]</span></span>.}</pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#getMruKey%2CLruCache%5BK%2CT%5D"><span class="Identifier">getMruKey</span></a><span class="Other">[</span><span class="Identifier">K</span><span class="Other">,</span> <span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">cache</span><span class="Other">:</span> <a href="lrucache.html#LruCache"><span class="Identifier">LruCache</span></a><span class="Other">[</span><span class="Identifier">K</span><span class="Other">,</span> <span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">K</span> {.
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Defect</span><span class="Other">,</span> <a href="lrucache.html#EmptyLruCacheError"><span class="Identifier">EmptyLruCacheError</span></a><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Defect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Return most recently used key. Raise <tt class="docutils literal"><span class="pre"><span class="Identifier">EmptyLruCacheError</span></span></tt> if <tt class="docutils literal"><span class="pre"><span class="Identifier">cache</span></span></tt> is empty.
@@ -367,8 +378,8 @@ Return most recently used key. Raise <tt class="docutils literal"><span class="p
 </dd>
 </div>
 <div id="getMruValue,LruCache[K,T]">
-<dt><pre><span class="Keyword">proc</span> <a href="#getMruValue%2CLruCache%5BK%2CT%5D"><span class="Identifier">getMruValue</span></a><span class="Other">[</span><span class="Identifier">K</span><span class="Other">,</span> <span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">cache</span><span class="Other">:</span> <a href="lrucache.html#LruCache"><span class="Identifier">LruCache</span></a><span class="Other">[</span><span class="Identifier">K</span><span class="Other">,</span> <span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><a href="lrucache.html#EmptyLruCacheError"><span class="Identifier">EmptyLruCacheError</span></a><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Defect</span><span class="Other">]</span></span>.}</pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#getMruValue%2CLruCache%5BK%2CT%5D"><span class="Identifier">getMruValue</span></a><span class="Other">[</span><span class="Identifier">K</span><span class="Other">,</span> <span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">cache</span><span class="Other">:</span> <a href="lrucache.html#LruCache"><span class="Identifier">LruCache</span></a><span class="Other">[</span><span class="Identifier">K</span><span class="Other">,</span> <span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span> {.
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Defect</span><span class="Other">,</span> <a href="lrucache.html#EmptyLruCacheError"><span class="Identifier">EmptyLruCacheError</span></a><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Defect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 Return most recently used value. Raise <tt class="docutils literal"><span class="pre"><span class="Identifier">EmptyLruCacheError</span></span></tt> if <tt class="docutils literal"><span class="pre"><span class="Identifier">cache</span></span></tt> is empty.
@@ -461,6 +472,19 @@ Return least recently used key value pair as tuple. Raise <tt class="docutils li
 </div>
 
 </dl></div>
+<div class="section" id="15">
+<h1><a class="toc-backref" href="#15">Iterators</a></h1>
+<dl class="item">
+<div id="keys.i,LruCache[K,T]">
+<dt><pre><span class="Keyword">iterator</span> <a href="#keys.i%2CLruCache%5BK%2CT%5D"><span class="Identifier">keys</span></a><span class="Other">[</span><span class="Identifier">K</span><span class="Other">,</span> <span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">cache</span><span class="Other">:</span> <a href="lrucache.html#LruCache"><span class="Identifier">LruCache</span></a><span class="Other">[</span><span class="Identifier">K</span><span class="Other">,</span> <span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">lent</span> <span class="Identifier">K</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Defect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+
+</dl></div>
 
   </div>
 </div>
@@ -469,7 +493,7 @@ Return least recently used key value pair as tuple. Raise <tt class="docutils li
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2022-02-21 00:20:13 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2022-11-14 09:21:30 UTC</small>
       </div>
     </div>
   </div>

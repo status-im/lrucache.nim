@@ -1,3 +1,4 @@
+import sequtils
 import unittest, options
 import lrucache
 
@@ -21,6 +22,11 @@ suite "LruCache":
     check:
       cache.len == 0
       cache.del(0) == int.none
+
+  test "keys iterator":
+    let cache = newLruCache[int, int](5)
+    for i in 1..10: cache[i] = i
+    check: toSeq(cache.keys) == toSeq(countdown(10, 6))
 
   test "remove items if capacity exceeded":
     let cache = newLruCache[int, int](5)
